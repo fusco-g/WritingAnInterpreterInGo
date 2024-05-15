@@ -17,15 +17,15 @@ const (
 	ILLEGAL, EOF = "ILLEGAL", "EOF"
 
 	// arithmetic logic operators
-	PLUS       = "+"
-	MIN        = "-"
-	DIV        = "/"
-	MUL        = "*"
-	EQUALS     = "=="
-	NOT_EQUALS = "!="
-	MINOR      = "<"
-	MAJOR      = ">"
-	ASSIGN     = "="
+	PLUS      = "+"
+	MIN       = "-"
+	DIV       = "/"
+	MUL       = "*"
+	EQUAL     = "=="
+	NOT_EQUAL = "!="
+	MINOR     = "<"
+	MAJOR     = ">"
+	ASSIGN    = "="
 
 	// delimiters
 	COMMA, SEMICOLO = ",", ";"
