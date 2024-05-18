@@ -26,9 +26,10 @@ const (
 	MINOR     = "<"
 	MAJOR     = ">"
 	ASSIGN    = "="
+	BANG      = "!"
 
 	// delimiters
-	COMMA, SEMICOLO = ",", ";"
+	COMMA, SEMICOLON = ",", ";"
 
 	// parentheses
 	O_ROUND_BRACKET = "("
@@ -64,7 +65,7 @@ var keywords = map[string]TokenType{
 	"return": RETURN,
 }
 
-func searchKeyword(keywordToSearch string) TokenType {
+func SearchKeyword(keywordToSearch string) TokenType {
 	// comma ok pattern. ok contain a boolean value
 	// if keyword exist return token
 	if token, ok := keywords[keywordToSearch]; ok {
