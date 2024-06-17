@@ -1,6 +1,6 @@
 package ast
 
-import "go/token"
+import "interpeter/token"
 
 type Node interface {
 	TokenLiteral() string
@@ -21,6 +21,7 @@ type Expression interface {
 }
 
 // contain all the input statements
+// witch are the nodes of the AST
 type Program struct {
 	Statements []Statement
 }
@@ -34,7 +35,38 @@ func (p *Program) TokenLiteral() string {
 	}
 }
 
+type Identifier struct {
+	Token token.Token // IDENTIFIER token
+	Value string      // let x = 5, x is the identifier in the statement
+}
+
+// LET statement structure
+// let x = 6 * 6
+// letToken = let
+// Name  = x
+// Value = 6 * 6
 type LetStatement struct {
 	letToken token.Token
-	// TODO
+	Name     *Identifier
+	Value    Expression
+}
+
+// LetStatement implements Statement interface
+func (l *LetStatement) statementNode() {
+
+}
+
+// implementing Node interface
+func (l *LetStatement) TokenLiteral() string {
+	return l.letToken.Literal
+}
+
+// implementing Expression interface
+func (i *Identifier) expressionNode() {
+
+}
+
+// implementing Node interface
+func (i *Identifier) TokenLiteral() string {
+	return i.Token.Literal
 }
